@@ -27,3 +27,6 @@ jobs:
     - name: Run script
       run: |
         python hrafn_retrieve.py example_input_file.txt
+
+    - name: Validate download
+      run: cat example_input_file.txt
