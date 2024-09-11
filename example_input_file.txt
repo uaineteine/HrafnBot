@@ -1,1 +1,1 @@
-https://raw.githubusercontent.com/uaineteine/HrafnBot/main/requirements.txt, download_test.txt
+https://raw.githubusercontent.com/uaineteine/HrafnBot/main/requirements.txt, test_download
