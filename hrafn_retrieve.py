@@ -19,7 +19,7 @@ def main(file_path):
     
     for url, relative_location in zip(urls, relative_locations):
         if url and relative_location:
-            os.makedirs(relative_location, exist_ok=True)
+            os.makedirs(os.path.dirname(relative_location), exist_ok=True)
             download_file(url, relative_location)
             print(f"File downloaded from {url} and saved to {relative_location}")
         else:
