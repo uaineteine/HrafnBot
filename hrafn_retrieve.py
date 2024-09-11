@@ -5,9 +5,9 @@ import argparse
 
 def read_data_from_file(file_path):
     df = pd.read_csv(file_path, header=None)
-    url = df.iloc[0, 0]
-    relative_location = df.iloc[1, 0]
-    return url, relative_location
+    urls = df.iloc[:, 0].tolist()
+    relative_locations = df.iloc[:, 1].tolist()
+    return urls, relative_locations
 
 def download_file(url, save_path):
     response = requests.get(url)
