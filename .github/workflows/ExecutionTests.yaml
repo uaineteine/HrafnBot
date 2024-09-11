@@ -29,4 +29,7 @@ jobs:
         python hrafn_retrieve.py example_input_file.txt
 
     - name: Validate download
-      run: cat test_download/downloaded.txt
+      run: |
+        cd test_download
+        ls
+        cat downloaded.txt
