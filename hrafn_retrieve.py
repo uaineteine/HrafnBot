@@ -15,17 +15,18 @@ def download_file(url, save_path):
         file.write(response.content)
 
 def main(file_path):
-    url, relative_location = read_data_from_file(file_path)
+    urls, relative_locations = read_data_from_file(file_path)
     
-    if url and relative_location:
-        os.makedirs(os.path.dirname(relative_location), exist_ok=True)
-        download_file(url, relative_location)
-        print(f"File downloaded from {url} and saved to {relative_location}")
-    else:
-        print("URL or relative download location not found in the document.")
+    for url, relative_location in zip(urls, relative_locations):
+        if url and relative_location:
+            os.makedirs(os.path.dirname(relative_location), exist_ok=True)
+            download_file(url, relative_location)
+            print(f"File downloaded from {url} and saved to {relative_location}")
+        else:
+            print("URL or relative download location not found in the document.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Download file from URL and save to relative location.')
+    parser = argparse.ArgumentParser(description='Download files from URLs and save to relative locations.')
     parser.add_argument('file_path', type=str, help='Path to the input text file')
     args = parser.parse_args()
     main(args.file_path)
