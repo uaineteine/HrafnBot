@@ -30,6 +30,7 @@ jobs:
 
     - name: Validate download
       run: |
+        ls -R
         cd test_download
         ls
         cat downloaded.txt
