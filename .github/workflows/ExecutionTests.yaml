@@ -32,5 +32,3 @@ jobs:
       run: |
         ls -R
         cd test_download
-        ls
-        cat downloaded.txt
