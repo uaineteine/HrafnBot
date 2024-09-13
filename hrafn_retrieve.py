@@ -7,6 +7,8 @@ def read_data_from_file(file_path):
     df = pd.read_csv(file_path, header=None)
     urls = df.iloc[:, 0].tolist()
     relative_locations = df.iloc[:, 1].tolist()
+    # Trim leading and trailing whitespace
+    relative_locations = [location.strip() for location in relative_locations]
     return urls, relative_locations
 
 def download_file(url, save_path):
