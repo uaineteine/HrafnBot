@@ -21,8 +21,10 @@ The first column should contain the URLs of the files to be downloaded.
 The second column should contain the relative paths where the files should be saved.
 
 Example CSV content:
+```
 https://example.com/file1.txt, downloads/file1.txt
 https://example.com/file2.txt, downloads/file2.txt
+```
 
 Run the script with the path to the CSV file as an argument:
 ```sh
