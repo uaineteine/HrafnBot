@@ -17,7 +17,7 @@ def main(file_path):
     for url, relative_location in zip(urls, relative_locations):
         if url and relative_location:
             os.makedirs(os.path.dirname(relative_location), exist_ok=True)
-            fileio.download_file(url, relative_location)
+            fileio.download_file_from_url(url, relative_location)
             print(f"File downloaded from {url} and saved to {relative_location}")
         else:
             print("URL or relative download location not found in the document.")
