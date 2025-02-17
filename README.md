@@ -8,6 +8,7 @@ This script downloads files from URLs specified in a CSV file and saves them to 
 * Python 3.x
 * requests library
 * pandas library
+* uainepydat library
 
 You can install the required libraries using pip:
 
