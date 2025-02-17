@@ -13,7 +13,7 @@ This script downloads files from URLs specified in a CSV file and saves them to 
 You can install the required libraries using pip:
 
 ```sh
-pip install requests pandas
+pip install -r requirements.txt
 ```
 
 ## Usage
