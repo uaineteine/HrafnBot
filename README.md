@@ -2,7 +2,38 @@
 
 ![icon](https://raw.githubusercontent.com/uaineteine/HrafnBot/main/doc/hrafnicon.png)
 
-This script downloads files from URLs specified in a CSV file and saves them to relative locations on your local machine.
+HrafnBot is a CLI tool that downloads files from URLs specified in a CSV file and saves them to relative locations on your local machine. It can be installed system-wide and run from anywhere using the `hrafnbot` command.
+
+## Installation
+
+### Quick Install
+1. Clone or download this repository
+2. Run the installer with your desired installation directory:
+
+**Linux/Mac:**
+```sh
+python install.py /opt/hrafnbot
+```
+
+**Windows:**
+```sh
+python install.py C:\Tools\HrafnBot
+```
+
+The installer will:
+- Copy all necessary files to the installation directory
+- Install Python dependencies automatically
+- Add the installation directory to your system PATH
+- Make the `hrafnbot` command available globally
+
+### Installation Options
+```sh
+python install.py <install_directory> [OPTIONS]
+
+Options:
+  --no-path    Don't automatically add to PATH
+  --no-deps    Don't install Python dependencies
+```
 
 ## Requirements
 * Python 3.x
@@ -10,16 +41,25 @@ This script downloads files from URLs specified in a CSV file and saves them to 
 * pandas library
 * uainepydat library
 
-You can install the required libraries using pip:
+Dependencies are automatically installed during the installation process, or you can install them manually:
 
 ```sh
 pip install -r requirements.txt
 ```
 
 ## Usage
+
+### After Installation
+Once installed, you can use HrafnBot from anywhere:
+
+```sh
+hrafnbot <input_file.csv>
+```
+
+### Input File Format
 Prepare a CSV file with two columns:
-The first column should contain the URLs of the files to be downloaded.
-The second column should contain the relative paths where the files should be saved.
+- The first column should contain the URLs of the files to be downloaded
+- The second column should contain the relative paths where the files should be saved
 
 Example CSV content:
 ```
@@ -27,11 +67,20 @@ https://example.com/file1.txt, downloads/file1.txt
 https://example.com/file2.txt, downloads/file2.txt
 ```
 
-Run the script with the path to the CSV file as an argument:
+### Examples
 ```sh
-python file_downloader.py path/to/your/file.csv
+# Download files specified in myfiles.csv
+hrafnbot myfiles.csv
+
+# Get help
+hrafnbot --help
 ```
-This will download the files specified in example.csv and save them to the specified relative locations.
+
+### Legacy Usage (Backwards Compatible)
+You can still run the original script directly:
+```sh
+python hrafn_retrieve.py path/to/your/file.csv
+```
 
 ##  Script Description
 The script consists of the following functions:
